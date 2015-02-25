@@ -3,7 +3,7 @@
 Adds a range input to a leaflet map.
 Compatible with Firefox, Webkit and IE10+
 
-[Demo](http://eclipse1979.github.io/Leaflet.ConditionalLayer/example/leaflet-conditionnalMarker.html)
+[Demo](http://eclipse1979.github.io/Leaflet.slider/example/leaflet.slider.html)
 
 ## Instructions for including the plugin :
 
