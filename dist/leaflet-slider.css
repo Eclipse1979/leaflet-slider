@@ -1,0 +1,77 @@
+.leaflet-slider-box {
+	height:25px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
+    padding: 0px 10px;
+}
+
+.leaflet-slider {
+    width: 100%;
+    margin-left:-1px;
+    margin-top:5px;
+}
+
+/*Firefox*/
+.leaflet-slider-box input[type=range]::-moz-range-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+.leaflet-slider-box input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #A4A4A4;
+}
+.leaflet-slider-box input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+/*Webkit*/
+.leaflet-slider-box input[type=range]{
+    -webkit-appearance: none;
+}
+
+.leaflet-slider-box input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 0px;
+}
+
+.leaflet-slider-box input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #A4A4A4;
+    margin-top: -4px;
+}
+
+.leaflet-slider-box input[type=range]:focus {
+    outline: none;
+}
+
+.leaflet-slider-box input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+/*IE*/
+.leaflet-slider-box input[type=range]::-ms-track {
+    height: 5px;
+    background: transparent;
+    border-color: transparent;
+    border-width: 6px 0;
+    color: transparent;
+}
+.leaflet-slider-box input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #A4A4A4;
+}
