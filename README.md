@@ -19,20 +19,13 @@ The function f must take as parameter the value of the input and will be called 
     slider = L.control.slider(function(value) {console.log(value);}, {id:slider});
     slider2 = L.control.slider(function(value) {alert(value);}, {id:slider2});
 
-## API reference
-Extends L.Control
 
-### Options :
+
+## Options :
 * `width:` width of the slider, default is ‘100px’
-
 * `position:` position of the slider, default is ‘topright’. See L.Control in leaflet’s API
-
 * `min:` minimal value of the slider, default is 0
-
 * `max:` maximal value of the slider, default is 100
-
 * `step:` incremental step of values in range, default is 1
-
 * `id:` name of the slider, must be the same name as the name of the slider’s variable, default is “slider”
-
 * `value:` onload value of the slider, default is 50
