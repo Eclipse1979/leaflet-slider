@@ -1,18 +1,15 @@
 #Leaflet-Slider
 
-Adds a range input slider to a leaflet map.
+Adds a range input slider to a leaflet map which automatically update when the input value is changed by calling a function taking the value as a parameter.
 
 [Demo](http://eclipse1979.github.io/leaflet.slider/example/leaflet-slider.html)
 
 ## Instructions for including the plugin :
 
-To create a new slider :
+The slider can be insterted like this: you create the control. **The slider's id (in the options) must be the same as the variable name used by the slider.** For instance in the following code, options should have `id: "newSlider"`. The function fn should only take the value of the input as a parameter and will be called when the input value is changed.
 
-    slider = L.control.slider(f(value) <function>, <options>);
-  
-The function f must take as parameter the value of the input and will be called each time the input value changes.
+    newSlider = L.control.slider(<Function> fn, <Control.Slider options> options);
 
-**WARNING** : the slider’s id must be the name of the variable of the slider. See options for detail.
 
 ## Simple usage :
 
