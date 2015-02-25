@@ -1,7 +1,6 @@
 #Leaflet-Slider
 
-Adds a range input to a leaflet map.
-Compatible with Firefox, Webkit and IE10+
+Adds a range input slider to a leaflet map.
 
 [Demo](http://eclipse1979.github.io/leaflet.slider/example/leaflet-slider.html)
 
@@ -13,13 +12,11 @@ To create a new slider :
   
 The function f must take as parameter the value of the input and will be called each time the input value changes.
 
-WARNING : the slider’s id must be the name of the variable of the slider. See options for detail.
+**WARNING** : the slider’s id must be the name of the variable of the slider. See options for detail.
 
 ## Simple usage :
 
-var map = L.map('map’);
-
-    slider = L.control.slider(function(value) {console.log(value);}, {id:slider}).addTo(map);
+    slider = L.control.slider(function(value) {console.log(value);}, {id:slider});
     slider2 = L.control.slider(function(value) {alert(value);}, {id:slider2});
 
 ## API reference
