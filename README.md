@@ -6,7 +6,7 @@ Check out the [Demo](http://eclipse1979.github.io/leaflet.slider/example/leaflet
 
 ## Using Leaflet-Slider :
 
-The slider can be insterted like this: you create the control. **The slider's id (in the options) must be the same as the variable name used by the slider.** For instance in the following code, options should have `id: "newSlider"`. The function fn should only take the value of the input as a parameter and will be called when the input value is changed.
+The slider can be insterted like this: you create the control. **The slider's id (in the options) must be the same as the variable name of the slider.** For instance in the following code, options should have `id: "newSlider"` as a propertie. The function fn should only take the value of the input as a parameter and will be called when the input value is changed.
 
     newSlider = L.control.slider(<Function> fn, <Control.Slider options> options);
 
