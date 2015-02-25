@@ -2,7 +2,7 @@
 
 Adds a range input slider to a leaflet map which automatically update when the input value is changed by calling a function taking the value as a parameter.
 
-Check ou the [Demo](http://eclipse1979.github.io/leaflet.slider/example/leaflet-slider.html).
+Check out the [Demo](http://eclipse1979.github.io/leaflet.slider/example/leaflet-slider.html).
 
 ## Using Leaflet-Slider :
 
