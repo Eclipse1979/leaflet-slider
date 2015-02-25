@@ -3,7 +3,7 @@
 Adds a range input to a leaflet map.
 Compatible with Firefox, Webkit and IE10+
 
-[Demo](http://eclipse1979.github.io/Leaflet.slider/example/leaflet.slider.html)
+[Demo](http://eclipse1979.github.io/leaflet.slider/example/leaflet-slider.html)
 
 ## Instructions for including the plugin :
 
@@ -26,16 +26,16 @@ var map = L.map('map’);
 Extends L.Control
 
 ### Options :
-* width: width of the slider, default is ‘100px’
+* `width:` width of the slider, default is ‘100px’
 
-* position: position of the slider, default is ‘topright’. See L.Control in leaflet’s API
+* `position:` position of the slider, default is ‘topright’. See L.Control in leaflet’s API
 
-* min: minimal value of the slider, default is 0
+* `min:` minimal value of the slider, default is 0
 
-* max: maximal value of the slider, default is 100
+* `max:` maximal value of the slider, default is 100
 
-* step: incremental step of values in range, default is 1
+* `step:` incremental step of values in range, default is 1
 
-* id: name of the slider, must be the same name as the name of the slider’s variable, default is “slider”
+* `id:` name of the slider, must be the same name as the name of the slider’s variable, default is “slider”
 
-* value: onload value of the slider, default is 50
+* `value:` onload value of the slider, default is 50
