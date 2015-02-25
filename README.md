@@ -10,7 +10,8 @@ Compatible with Firefox, Webkit and IE10+
 To create a new slider :
 
   slider = L.control.slider(f(value) <function>, <options>);
-  The function f must take as parameter the value of the input and will be called each time the input value changes.
+  
+The function f must take as parameter the value of the input and will be called each time the input value changes.
 
 WARNING : the slider’s id must be the name of the variable of the slider. See options for detail.
 
