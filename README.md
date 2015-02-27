@@ -29,4 +29,6 @@ The slider can be insterted like this: you create the control. **The slider's id
 * `collapsed:` wether the slider collapses when it looses focus, default is `true`.
 * `title:` value of the title attribute, default is `'Leaflet Slider'`.
 * `logo:` letter on the button when collapsed, default is `'S'`.
-* `axis:` orientation of the slider, either `'horizontal'` or `'vertical'`, default is `'horizontal'`.
+* `orientation:` orientation of the slider, either `'horizontal'` or `'vertical'`, default is `'horizontal'`.
+* `showValue:` wether or not the value of the input should be shown next to the slider, default is `true`.
+* `getValue:` the function called to transform the input of the slider into the value shown by showValue, default is `function(value) {return value;}`.
