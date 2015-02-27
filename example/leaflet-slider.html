@@ -25,13 +25,13 @@
 			id: 'examples.map-i875mjb7'
 		}).addTo(map);
 		slider = L.control.slider(function(value) {
-    			alert(value);
     			console.log(value);
-			}, {
+			}, 'horizontal', {
     		max: 50,
     		value: 15,
-    		width: '250px',
-    		position: 'topright'
+    		size: '200px',
+    		position: 'topright',
+    		logo: 'R'
 		});
 		slider.addTo(map);
 

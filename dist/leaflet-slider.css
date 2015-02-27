@@ -1,48 +1,88 @@
-.leaflet-slider-box {
+.leaflet-control-slider {
 	height:25px;
+    width:25px;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 4px;
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
+    padding: 0px;
+}
+.leaflet-control-slider a.leaflet-control-slider-toggle {
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.leaflet-control-slider-expanded a.leaflet-control-slider-toggle {
+    display:none;
+}
+.leaflet-control-slider-expanded {
     padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.leaflet-control-slider input {
+    display:none;
+    padding: 0px;
+}
+
+.leaflet-control-slider-expanded input {
+    display:inherit;
+}
+
+.leaflet-control-slider-expanded.leaflet-control-slider-vertical{
+    padding: 10px 0px;
 }
 
 .leaflet-slider {
     width: 100%;
+    height:100%;
     margin-left:-1px;
-    margin-top:5px;
+}
+
+.leaflet-control-slider-vertical .leaflet-slider{
+    margin-top: 0px;
+    -webkit-appearance: slider-vertical;
+    writing-mode: bt-lr;
 }
 
 /*Firefox*/
-.leaflet-slider-box input[type=range]::-moz-range-track {
+.leaflet-control-slider input[type=range]::-moz-range-track {
     height: 5px;
     background: #ddd;
     border: none;
     border-radius: 3px;
 }
+.leaflet-control-slider-vertical input[type=range]::-moz-range-track {
+    height: 100%;
+    width:5px;
+}
 
-.leaflet-slider-box input[type=range]::-moz-range-thumb {
+.leaflet-control-slider input[type=range]::-moz-range-thumb {
     border: none;
     height: 16px;
     width: 16px;
     border-radius: 50%;
     background: #A4A4A4;
 }
-.leaflet-slider-box input[type=range]::-moz-focus-outer {
+.leaflet-control-slider input[type=range]::-moz-focus-outer {
     border: 0;
 }
 /*Webkit*/
-.leaflet-slider-box input[type=range]{
+.leaflet-control-slider input[type=range]{
     -webkit-appearance: none;
 }
 
-.leaflet-slider-box input[type=range]::-webkit-slider-runnable-track {
+.leaflet-control-slider input[type=range]::-webkit-slider-runnable-track {
     height: 5px;
     background: #ddd;
     border: none;
     border-radius: 0px;
 }
+.leaflet-control-slider-vertical input[type=range]::-moz-range-track {
+    height: 100%;
+    width:5px;
+}
 
-.leaflet-slider-box input[type=range]::-webkit-slider-thumb {
+.leaflet-control-slider input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     height: 16px;
@@ -52,23 +92,27 @@
     margin-top: -4px;
 }
 
-.leaflet-slider-box input[type=range]:focus {
+.leaflet-control-slider input[type=range]:focus {
     outline: none;
 }
 
-.leaflet-slider-box input[type=range]:focus::-webkit-slider-runnable-track {
+.leaflet-control-slider input[type=range]:focus::-webkit-slider-runnable-track {
     background: #ccc;
 }
 
 /*IE*/
-.leaflet-slider-box input[type=range]::-ms-track {
+.leaflet-control-slider input[type=range]::-ms-track {
     height: 5px;
     background: transparent;
     border-color: transparent;
     border-width: 6px 0;
     color: transparent;
 }
-.leaflet-slider-box input[type=range]::-ms-thumb {
+.leaflet-control-slider-vertical input[type=range]::-ms-track{
+    height: 100%;
+    width:5px;
+}
+.leaflet-control-slider input[type=range]::-ms-thumb {
     border: none;
     height: 16px;
     width: 16px;
