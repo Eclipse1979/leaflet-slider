@@ -5,40 +5,73 @@
 	border-radius: 4px;
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
     padding: 0px;
+} 
+.leaflet-control-slider.leaflet-control-slider-horizontal p.leaflet-control-slider-value {
+    margin: 0px 0px 0px 0px;
+    border-right: 1px solid #CCC;
+    width: 34px;
+    float :left;
+    clear:none;
+}
+.leaflet-control-slider.leaflet-control-slider-vertical p.leaflet-control-slider-value {
+    margin: 0px 0px 5px 0px;
+    border-bottom: 1px solid #CCC;
+    width: 26px;
+}
+.leaflet-control-slider p.leaflet-control-slider-value {
+    height: 25px;
+    line-height: 26px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+    display:none;
+}
+.leaflet-control-slider.leaflet-control-slider-expanded p.leaflet-control-slider-value {
+    display:block;
 }
 .leaflet-control-slider a.leaflet-control-slider-toggle {
     border-radius: 4px;
     font-weight: bold;
     font-size: 1.3em;
 }
-.leaflet-control-slider-expanded a.leaflet-control-slider-toggle {
+.leaflet-control-slider.leaflet-control-slider-expanded a.leaflet-control-slider-toggle {
     display:none;
 }
-.leaflet-control-slider-expanded {
-    padding: 0px 10px;
-    border-radius: 10px;
-}
 
-.leaflet-control-slider input {
+.leaflet-control-slider input.leaflet-slider {
     display:none;
     padding: 0px;
 }
 
-.leaflet-control-slider-expanded input {
+.leaflet-control-slider.leaflet-control-slider-expanded input.leaflet-slider {
     display:inherit;
 }
-
-.leaflet-control-slider-expanded.leaflet-control-slider-vertical{
-    padding: 10px 0px;
+.leaflet-control-slider.leaflet-control-slider-expanded.leaflet-control-slider-horizontal{
+    padding-right: 10px;
 }
 
-.leaflet-slider {
-    width: 100%;
+.leaflet-control-slider.leaflet-control-slider-expanded.leaflet-control-slider-vertical{
+    padding-bottom: 10px;
+}
+
+.leaflet-control-slider .leaflet-slider {
+    margin:0px;
+}
+.leaflet-control-slider.leaflet-control-slider-horizontal .leaflet-slider {
+    float :right;
+    clear:none;
+    width: 90%;
     height:100%;
-    margin-left:-1px;
+}
+.leaflet-control-slider.leaflet-control-slider-vertical .leaflet-slider {
+    width: 100%;
+    height:90%;
 }
 
-.leaflet-control-slider-vertical .leaflet-slider{
+.leaflet-control-slider.leaflet-control-slider-vertical .leaflet-slider{
     margin-top: 0px;
     -webkit-appearance: slider-vertical;
     writing-mode: bt-lr;
@@ -46,12 +79,15 @@
 
 /*Firefox*/
 .leaflet-control-slider input[type=range]::-moz-range-track {
-    height: 5px;
     background: #ddd;
     border: none;
     border-radius: 3px;
 }
-.leaflet-control-slider-vertical input[type=range]::-moz-range-track {
+.leaflet-control-slider.leaflet-control-slider-horiozontal input[type=range]::-moz-range-track {
+    height: 5px;
+    width:100%;
+}
+.leaflet-control-slider.leaflet-control-slider-vertical input[type=range]::-moz-range-track {
     height: 100%;
     width:5px;
 }
@@ -72,12 +108,15 @@
 }
 
 .leaflet-control-slider input[type=range]::-webkit-slider-runnable-track {
-    height: 5px;
     background: #ddd;
     border: none;
     border-radius: 0px;
 }
-.leaflet-control-slider-vertical input[type=range]::-moz-range-track {
+.leaflet-control-slider.leaflet-control-slider-horizontal input[type=range]::-moz-range-track {
+    height: 5px;
+    width:100%;
+}
+.leaflet-control-slider.leaflet-control-slider-vertical input[type=range]::-moz-range-track {
     height: 100%;
     width:5px;
 }
@@ -102,13 +141,16 @@
 
 /*IE*/
 .leaflet-control-slider input[type=range]::-ms-track {
-    height: 5px;
     background: transparent;
     border-color: transparent;
     border-width: 6px 0;
     color: transparent;
 }
-.leaflet-control-slider-vertical input[type=range]::-ms-track{
+.leaflet-control-slider.leaflet-control-slider-vertical input[type=range]::-ms-track{
+    height: 5px;
+    width:100%;
+}
+.leaflet-control-slider.leaflet-control-slider-vertical input[type=range]::-ms-track{
     height: 100%;
     width:5px;
 }

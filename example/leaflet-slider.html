@@ -7,13 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="leaflet/leaflet.css" />
+	<link rel="stylesheet" href="support/example.css" />
 	<link rel="stylesheet" href="../dist/leaflet-slider.css"/>
 
 	<script src="leaflet/leaflet.js"></script>
 	<script src="../dist/leaflet-slider.js"></script>
 </head>
 <body>
-	<div id="map" style="width: 600px; height: 400px"></div>
+	<div id="map" style="left:0px; top:0px;bottom:0px;right:0px; position:absolute;"></div>
 
 	<script>
 		var map = L.map('map').setView([51.505, -0.09], 13);
@@ -27,11 +28,10 @@
 		slider = L.control.slider(function(value) {
     			console.log(value);
 			}, 'horizontal', {
-    		max: 50,
-    		value: 15,
-    		size: '200px',
-    		position: 'topright',
-    		logo: 'R'
+    		max: 4,
+    		value: 2,
+    		step:0.1,
+    		size: '250px'
 		});
 		slider.addTo(map);
 
