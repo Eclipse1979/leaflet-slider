@@ -17,7 +17,8 @@ L.Control.Slider = L.Control.extend({
         axis: 'horizontal',
         getValue: function(value) {
             return value;
-        }
+        },
+        showValue: true
     },
     initialize: function (f, options) {
         L.setOptions(this, options);
@@ -43,7 +44,9 @@ L.Control.Slider = L.Control.extend({
         return this._container;
     },
     _updateValue: function () {
-    	this._sliderValue.innerHTML = this.options.getValue(this.value = this.slider.value);
+        if (this.options.showValue){
+    	   this._sliderValue.innerHTML = this.options.getValue(this.value = this.slider.value);
+        }
         this.update(this.value);
     },
     _initLayout: function () {
@@ -52,9 +55,10 @@ L.Control.Slider = L.Control.extend({
         this._sliderLink = L.DomUtil.create('a', className + '-toggle', this._container);
         this._sliderLink.setAttribute("title", this.options.title);
         this._sliderLink.innerHTML = this.options.logo;
-        
-        this._sliderValue = L.DomUtil.create('p', className+'-value', this._container);
-
+        if (this.options.showValue){
+            this._sliderValue = L.DomUtil.create('p', className+'-value', this._container);
+            this._sliderValue.innerHTML = this.options.getValue(this.options.value);
+        }
         this.slider = L.DomUtil.create('input', 'leaflet-slider', this._container);
         if (this.options.axis == 'vertical') {this.slider.setAttribute("orient", "vertical");}
         this.slider.setAttribute("title", this.options.title);
@@ -65,11 +69,17 @@ L.Control.Slider = L.Control.extend({
         this.slider.setAttribute("step", this.options.step);
         this.slider.setAttribute("value", this.options.value);
         this.slider.setAttribute("onChange", this.options.id + "._updateValue()");
-        if (this.options.axis =='vertical') {this.slider.style.height = (this.options.size.replace('px','') -26) +'px';}
-        else {this.slider.style.width = (this.options.size.replace('px','') -45) +'px';}
-        
+
+        if (this.options.showValue){
+            if (this.options.axis =='vertical') {this.slider.style.height = (this.options.size.replace('px','') -36) +'px';}
+            else {this.slider.style.width = (this.options.size.replace('px','') -56) +'px';}
+        } else {
+            if (this.options.axis =='vertical') {this.slider.style.height = (this.options.size.replace('px','') -10) +'px';}
+            else {this.slider.style.width = (this.options.size.replace('px','') -25) +'px';}
+        }
+20
         L.DomEvent.disableClickPropagation(this._container);
-        this._sliderValue.innerHTML = this.options.getValue(this.slider.value);
+
         if (this.options.collapsed) {
             if (!L.Browser.android) {
                 L.DomEvent.on(this._container, {
