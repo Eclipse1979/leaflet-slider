@@ -43,26 +43,28 @@ a.leaflet-control-slider-toggle {
     border-bottom: 1px solid #CCC;
     width: 36px;
 }
-.leaflet-control-slider .leaflet-slider {
+.leaflet-control-slider input.leaflet-slider {
     margin:0px;
 }
-.leaflet-control-slider input.leaflet-slider {
+.leaflet-control-slider input.leaflet-slider , .leaflet-control-slider .leaflet-slider-container {
     display:none;
     padding: 0px;
 }
 
-.leaflet-control-slider.leaflet-control-slider-horizontal .leaflet-slider {
+.leaflet-control-slider.leaflet-control-slider-horizontal .leaflet-slider-container {
     float :right;
     clear:none;
     width: 90%;
     height:36px;
 }
+.leaflet-control-slider.leaflet-control-slider-horizontal input.leaflet-slider {
+    height:36px;
+}
 
-.leaflet-control-slider.leaflet-control-slider-vertical .leaflet-slider{
-    -webkit-appearance: slider-vertical;
+.leaflet-control-slider.leaflet-control-slider-vertical input.leaflet-slider{
     writing-mode: bt-lr;
     width: 36px;
-    height:90%;
+    height:100%;
 }
 
 .leaflet-control-slider.leaflet-control-slider-expanded p.leaflet-control-slider-value {
@@ -71,19 +73,23 @@ a.leaflet-control-slider-toggle {
 .leaflet-control-slider.leaflet-control-slider-expanded a.leaflet-control-slider-toggle {
     display:none;
 }
-.leaflet-control-slider.leaflet-control-slider-expanded input.leaflet-slider {
+.leaflet-control-slider.leaflet-control-slider-expanded input.leaflet-slider, .leaflet-control-slider.leaflet-control-slider-expanded .leaflet-slider-container{
     display:inherit;
 }
+.leaflet-control-slider.leaflet-control-slider-vertical .leaflet-slider-container {
+  width:36px;
+  -webkit-transform:rotate(180deg);
+}
 
-.leaflet-control-slider.leaflet-control-slider-vertical input {
+.leaflet-control-slider.leaflet-control-slider-vertical .leaflet-slider-container {
   margin: 10px 0px;
 }
 
-.leaflet-control-slider.leaflet-control-slider-horizontal input {
+.leaflet-control-slider.leaflet-control-slider-horizontal .leaflet-slider-container {
   margin: 0px 10px;
 }
 
-.leaflet-control-slider.leaflet-control-slider-vertical.leaflet-control-slider-incdec input {
+.leaflet-control-slider.leaflet-control-slider-vertical.leaflet-control-slider-incdec .leaflet-slider-container {
   margin: 0px 0px;
 }
 
@@ -210,6 +216,16 @@ a.leaflet-control-slider-toggle {
     float:right;   
 }
 
+.leaflet-control-slider input[type=range]::-moz-focus-outer {
+    border: 0;
+}
 
-
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* webkit specific CSS */
+    .leaflet-control-slider.leaflet-control-slider-vertical input[type=range] {
+    -webkit-transform-origin: 18px 18px;
+    -webkit-transform:rotate(90deg);
+    height:36px;
+  }
+}
 

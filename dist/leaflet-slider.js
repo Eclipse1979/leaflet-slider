@@ -68,7 +68,8 @@ L.Control.Slider = L.Control.extend({
             L.DomUtil.addClass(this._container, 'leaflet-control-slider-incdec');
         }
 
-        this.slider = L.DomUtil.create('input', 'leaflet-slider', this._container);
+        this._sliderContainer = L.DomUtil.create('div', 'leaflet-slider-container', this._container);
+        this.slider = L.DomUtil.create('input', 'leaflet-slider', this._sliderContainer);
         if (this.options.orientation == 'vertical') {this.slider.setAttribute("orient", "vertical");}
         this.slider.setAttribute("title", this.options.title);
         this.slider.setAttribute("id", this.options.id);
@@ -86,11 +87,13 @@ L.Control.Slider = L.Control.extend({
         }
 
         if (this.options.showValue){
-            if (this.options.orientation =='vertical') {this.slider.style.height = (this.options.size.replace('px','') -36) +'px';}
-            else {this.slider.style.width = (this.options.size.replace('px','') -56) +'px';}
+            if (window.matchMedia("screen and (-webkit-min-device-pixel-ratio:0)").matches && this.options.orientation =='vertical') {this.slider.style.width = (this.options.size.replace('px','') -36) +'px'; this._sliderContainer.style.height = (this.options.size.replace('px','') -36) +'px';}
+            else if (this.options.orientation =='vertical') {this._sliderContainer.style.height = (this.options.size.replace('px','') -36) +'px';}
+            else {this._sliderContainer.style.width = (this.options.size.replace('px','') -56) +'px';}
         } else {
-            if (this.options.orientation =='vertical') {this.slider.style.height = (this.options.size.replace('px','') -10) +'px';}
-            else {this.slider.style.width = (this.options.size.replace('px','') -25) +'px';}
+            if (window.matchMedia("screen and (-webkit-min-device-pixel-ratio:0)").matches && this.options.orientation =='vertical') {this.slider.style.width = (this.options.size.replace('px','') -10) +'px'; this._sliderContainer.style.height = (this.options.size.replace('px','') -36) +'px';}
+            else if (this.options.orientation =='vertical') {this._sliderContainer.style.height = (this.options.size.replace('px','') -10) +'px';}
+            else {this._sliderContainer.style.width = (this.options.size.replace('px','') -25) +'px';}
         }
 
         L.DomEvent.disableClickPropagation(this._container);
