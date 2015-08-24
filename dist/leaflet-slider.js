@@ -61,6 +61,7 @@ L.Control.Slider = L.Control.extend({
             this._sliderValue = L.DomUtil.create('p', className+'-value', this._container);
             this._sliderValue.innerHTML = this.options.getValue(this.options.value);
         }
+
         if(this.options.increment) {
             this._plus = L.DomUtil.create('a', className + '-plus', this._container);
             this._plus.innerHTML = "+";
@@ -91,7 +92,7 @@ L.Control.Slider = L.Control.extend({
             else if (this.options.orientation =='vertical') {this._sliderContainer.style.height = (this.options.size.replace('px','') -36) +'px';}
             else {this._sliderContainer.style.width = (this.options.size.replace('px','') -56) +'px';}
         } else {
-            if (window.matchMedia("screen and (-webkit-min-device-pixel-ratio:0)").matches && this.options.orientation =='vertical') {this.slider.style.width = (this.options.size.replace('px','') -10) +'px'; this._sliderContainer.style.height = (this.options.size.replace('px','') -36) +'px';}
+            if (window.matchMedia("screen and (-webkit-min-device-pixel-ratio:0)").matches && this.options.orientation =='vertical') {this.slider.style.width = (this.options.size.replace('px','') -10) +'px'; this._sliderContainer.style.height = (this.options.size.replace('px','') -10) +'px';}
             else if (this.options.orientation =='vertical') {this._sliderContainer.style.height = (this.options.size.replace('px','') -10) +'px';}
             else {this._sliderContainer.style.width = (this.options.size.replace('px','') -25) +'px';}
         }
