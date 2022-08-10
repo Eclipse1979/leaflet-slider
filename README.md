@@ -19,7 +19,7 @@ The slider can be insterted like this: you create the control. The function fn s
 
 
 ## Options :
-* `width:` width of the slider, default is `‘100px’`.
+* `size:` size of the slider, default is `‘100px’`.
 * `position:` position of the slider, default is `‘topright’`. See L.Control in leaflet’s API.
 * `min:` minimal value of the slider, default is `0`.
 * `max:` maximal value of the slider, default is `100`.
