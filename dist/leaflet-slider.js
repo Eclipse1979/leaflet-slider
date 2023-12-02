@@ -41,20 +41,20 @@ L.Control.Slider = L.Control.extend({
         }
     },
     onAdd: function (map) {
-        this._initLayout();
+        this._initLayout(map);
         this.update(this.options.value+"");
         return this._container;
     },
     _updateValue: function () {
         this.value = this.slider.value;
         if (this.options.showValue){
-    	   this._sliderValue.innerHTML = this.options.getValue(this.value);
+           this._sliderValue.innerHTML = this.options.getValue(this.value);
         }
         this.update(this.value);
     },
     _initLayout: function () {
         var className = 'leaflet-control-slider';
-        this._container = L.DomUtil.create('div', className + ' ' +className + '-' + this.options.orientation);
+        this._container = L.DomUtil.create('div', className + ' leaflet-control-layers ' + className + '-' + this.options.orientation);
         this._sliderLink = L.DomUtil.create('a', className + '-toggle', this._container);
         this._sliderLink.setAttribute("title", this.options.title);
         this._sliderLink.innerHTML = this.options.logo;
@@ -120,6 +120,10 @@ L.Control.Slider = L.Control.extend({
                 L.DomEvent
                     .on(this._sliderLink, 'click', L.DomEvent.stop)
                     .on(this._sliderLink, 'click', this._expand, this);
+                var _this = this;
+                map.on('click', function() {
+                    _this._collapse();
+                });
             } else {
                 L.DomEvent.on(this._sliderLink, 'focus', this._expand, this);
             }
